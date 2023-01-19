@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import Login from "./components/Login";
+import Header from "./components/Header";
+import ContenedorNotas from "./components/ContenedorNotas";
+import { useState } from "react";
+let Usuario = {};
 
 function App() {
+  const [login, setLogin] = useState(false);
+
+  function User(Ususario) {
+    Usuario = { ...Ususario };
+    console.log(Usuario, Object.keys(Usuario).length);
+    setLogin(true);
+  }
+  //logOut
+  function handleLogOut(e) {
+    Usuario = {};
+    setLogin(false);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App">     
+      {!login && <Login User={User} />}
+
+      {Object.keys(Usuario).length > 0 && (
+        <>
+          <Header
+            usuario={Usuario.name}
+            correo={Usuario.email}
+            foto={Usuario.picture}
+            handleLogOut={handleLogOut}
+          />
+          <ContenedorNotas />
+        </>
+      )}
     </div>
   );
 }
