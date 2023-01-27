@@ -1,0 +1,46 @@
+.DivBotonAgregar {
+  background-color: rgba(102, 102, 102, 255);
+  position: absolute;
+  top: 90%;
+}
+
+#BotonAgregar {
+  border: 0px;
+}
+
+#BotonAgregar:hover {
+  transform: scale(1.1);
+}
+
+#DivModalAgregarTarea{
+    background-color: aliceblue;
+    position: absolute;
+    visibility:hidden;
+    width: 500px;
+    height: 300px;
+     border-radius: 30px; 
+    background-color: rgba(81,81,81,1);
+    display: flex;
+    /* justify-content: center; */
+     align-items: center; 
+    flex-direction: column;         
+}    
+
+.tituloH2{
+    margin: 30px;    
+}
+
+#tituloTarea{
+    width: 400px;
+    margin-bottom: 20px;
+
+}
+#descripcionTarea{
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+#btnAgregar{
+    width: 400px;
+}
+

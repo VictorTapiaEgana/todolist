@@ -31,13 +31,15 @@ function Login({ User }) {
     return Math.floor(Math.random() * max);
   }
   //validaer Correo
-  function ValidateEmail(input)  {
-    var validRegex = new RegExp ('^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-] +)*$');    
+  function ValidateEmail(input) {
+   
+    var validRegex = new RegExp(
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+    );
 
-    const res = input.match(validRegex);
-    console.log('valor res',res)
+    let res = validRegex.test(input);
+
     return res;
-    
   }
 
   //boton click login usuario
@@ -45,29 +47,33 @@ function Login({ User }) {
     //e.stopPropagation()
     let Pagina = "";
 
-    Pagina = `http://xsgames.co/randomusers/assets/avatars/${sexo}/${getRandomInt(78)}.jpg`;
+    Pagina = `http://xsgames.co/randomusers/assets/avatars/${sexo}/${getRandomInt(
+      78
+    )}.jpg`;
 
     let nombre = document.getElementById("nombre").value;
     let correo = document.getElementById("email").value;
-    //validar datos
-     //--> Validar Email
-     const esCorreo = ValidateEmail(correo);
-    console.log('Valor Correo',esCorreo)
-     if (esCorreo){
-       
-     }else{
-      document.getElementById("email").value='';
+    //validar datos    
+    const esCorreo = ValidateEmail(correo);
+  
+    
+    if (esCorreo) {
+      document.getElementById("ErrorLabel").style.visibility = 'hidden';
+    
+      nombre === '' && (nombre ='A n O n I m O')
+
+      const newUsuario = {
+        name: nombre,
+        email: correo,
+        picture: Pagina,
+      };
+
+      User(newUsuario);
+    } else {
+      document.getElementById("email").value = "";
       document.getElementById("email").focus();
-     }
-
-
-    const newUsuario = {
-      name: nombre,
-      email: correo,
-      picture: Pagina,
-    };
-
-    User(newUsuario);
+      document.getElementById("ErrorLabel").style.visibility = 'visible';
+    }
   }
   // seleccion de sexo
   function handleonChange(e) {
@@ -80,8 +86,9 @@ function Login({ User }) {
       <h1 className="ingrese">Ingrese como Usuario </h1>
 
       <div className="loginForm">
-        <input id="nombre" type="text" placeholder="Nombre" autoComplete="on" />
+        <input id="nombre" type="name" placeholder="Nombre" autoComplete="on" />
         <input id="email" type="email" placeholder="Correo" autoComplete="on" />
+        <label id="ErrorLabel">mail incorrecto</label>
 
         <div className="optionButtons">
           <input

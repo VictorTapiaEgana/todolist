@@ -8,10 +8,10 @@ let Usuario = {};
 
 function App() {
   const [login, setLogin] = useState(false);
+ 
 
   function User(Ususario) {
-    Usuario = { ...Ususario };
-    console.log(Usuario, Object.keys(Usuario).length);
+    Usuario = { ...Ususario };    
     setLogin(true);
   }
   //logOut
