@@ -7,29 +7,31 @@ import Tareas from "./Tareas";
 function ContenedorNotas() {
   // const Key = uuidv4();
 
-  let [Tareass, setTareas] = useState([]);
+  const [Tareass, setTareass] = useState([]);
 
   const agregarTareas = (tareas) => {
-    Tareass.unshift(tareas);
-    setTareas(Tareass);
-    console.log(Tareass);
+    Tareass.push(tareas);
+    const array =[...Tareass]
+    setTareass(array);
+    console.log('Array Tareass',Tareass);
   };
 
   return (
     <>
       <div className="contenedor">
-        bla bla bla
-        {Tareass.map((valor) => (
+        
+        {Tareass.map(valor => (
           <Tareas
             key={valor.id}
-            titulo={valor.titulo}
-            Descripcion={valor.Descripcion}
+            id ={valor.id}
+            Titulo={valor.titulo}
+            Descripcion={valor.descripcion}
           />
-        ))};
-        ble ble ble
+        ))}
+        
       </div>
 
-      <AgregarTarea agregarTareas={agregarTareas} />
+      <AgregarTarea agregarTareas={agregarTareas} /> 
     </>
   );
 }

@@ -18,6 +18,7 @@ function AgregarTarea( { agregarTareas }) {
              titulo : Titulo, 
              descripcion :Descripcion
             };
+    // console.log ('Mostrar TareaX',TareaX) //BORRAR
     agregarTareas(TareaX);
      document.getElementById("DivModalAgregarTarea").style.visibility = "hidden";
   }
