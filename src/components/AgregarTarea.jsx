@@ -20,6 +20,10 @@ function AgregarTarea( { agregarTareas }) {
             };
     // console.log ('Mostrar TareaX',TareaX) //BORRAR
     agregarTareas(TareaX);
+
+     document.getElementById('tituloTarea').value ="";
+     document.getElementById('descripcionTarea').value="";
+
      document.getElementById("DivModalAgregarTarea").style.visibility = "hidden";
   }
 

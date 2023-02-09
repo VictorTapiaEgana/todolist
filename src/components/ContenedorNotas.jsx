@@ -11,27 +11,25 @@ function ContenedorNotas() {
 
   const agregarTareas = (tareas) => {
     Tareass.push(tareas);
-    const array =[...Tareass]
+    const array = [...Tareass];
     setTareass(array);
-    console.log('Array Tareass',Tareass);
+    console.log("Array Tareass", Tareass);
   };
 
   return (
     <>
       <div className="contenedor">
-        
-        {Tareass.map(valor => (
+        {Tareass.map((valor) => (
           <Tareas
             key={valor.id}
-            id ={valor.id}
+            id={valor.id}
             Titulo={valor.titulo}
             Descripcion={valor.descripcion}
           />
         ))}
-        
       </div>
 
-      <AgregarTarea agregarTareas={agregarTareas} /> 
+      <AgregarTarea agregarTareas={agregarTareas} />
     </>
   );
 }
