@@ -2,35 +2,33 @@ import "../css/AgregarTarea.css";
 import Imagen from "../assets/add.png";
 import { v4 as uuidv4 } from "uuid";
 
-function AgregarTarea( { agregarTareas }) {
-  let Titulo ='';  
-  let Descripcion ='';
-  
+function AgregarTarea({ agregarTareas }) {
+  let Titulo = "";
+  let Descripcion = "";
+
   function HandleClickAgregar() {
     document.getElementById("DivModalAgregarTarea").style.visibility = "visible";
+    document.getElementById("tituloTarea").focus();
   }
 
-  const handleAgregarTarea=()=> {
-    
+  const handleAgregarTarea = () => {
     let TareaX = {};
-    TareaX ={
-             id : uuidv4(),
-             titulo : Titulo, 
-             descripcion :Descripcion
-            };
-    // console.log ('Mostrar TareaX',TareaX) //BORRAR
+    TareaX = {
+      id: uuidv4(),
+      titulo: Titulo,
+      descripcion: Descripcion,
+    };
+
     agregarTareas(TareaX);
+    document.getElementById("tituloTarea").value = "";
+    document.getElementById("descripcionTarea").value = "";
+    document.getElementById("DivModalAgregarTarea").style.visibility = "hidden";
+  };
 
-     document.getElementById('tituloTarea').value ="";
-     document.getElementById('descripcionTarea').value="";
-
-     document.getElementById("DivModalAgregarTarea").style.visibility = "hidden";
+  function cambioTitulo(e) {
+    Titulo = e.target.value;
   }
-
-  function cambioTitulo (e){
-        Titulo= e.target.value;
-  }
-  function cambioDescripcion(e){
+  function cambioDescripcion(e) {
     Descripcion = e.target.value;
   }
 
@@ -47,8 +45,18 @@ function AgregarTarea( { agregarTareas }) {
 
       <div id="DivModalAgregarTarea">
         <h2 className="tituloH2">Agregar Nota</h2>
-        <input type="text" id="tituloTarea" placeholder="Titulo de la Tarea" onChange={ cambioTitulo } />
-        <input type="text" id="descripcionTarea" placeholder="descripcion" onChange={ cambioDescripcion }/>
+        <input
+          type="text"
+          id="tituloTarea"
+          placeholder="Titulo de la Tarea"
+          onChange={cambioTitulo}
+        />
+        <input
+          type="text"
+          id="descripcionTarea"
+          placeholder="descripcion"
+          onChange={cambioDescripcion}
+        />
         <input
           type="button"
           id="btnAgregar"

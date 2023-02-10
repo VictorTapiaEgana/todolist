@@ -16,6 +16,16 @@ function ContenedorNotas() {
     console.log("Array Tareass", Tareass);
   };
 
+  const HandleClickEliminar = (id) => {
+    const Borrar = id;
+    const ArrayFiltrado = Tareass.filter((item) => item.id !== Borrar);
+    setTareass(ArrayFiltrado);
+  };
+
+  const HandleClickEditar = (id) => {
+    alert ( id);
+  };
+
   return (
     <>
       <div className="contenedor">
@@ -25,6 +35,8 @@ function ContenedorNotas() {
             id={valor.id}
             Titulo={valor.titulo}
             Descripcion={valor.descripcion}
+            HandleClickEliminar={HandleClickEliminar}
+            HandleClickEditar={HandleClickEditar}
           />
         ))}
       </div>

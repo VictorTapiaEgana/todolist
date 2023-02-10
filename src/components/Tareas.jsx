@@ -1,32 +1,36 @@
-import '../css/Tareas.css'
-import Imagen from '../assets/delete.png'
+import "../css/Tareas.css";
+import Imagen from "../assets/delete.png";
+import editar from "../assets/edit.png"
 
-function Tareas({id, Titulo,Descripcion}){
+function Tareas({ id, Titulo, Descripcion, HandleClickEliminar, HandleClickEditar }) {
 
-  const HandleClickEliminar = (id) =>{
-    alert ('Borrar ' + id )
-  }
+ 
 
+  return (
+    <div id={id} className="tarjeta">
+      <h2 contentEditable="true" className="tituloTarjeta">
+        {Titulo}
+      </h2>
 
-    return(
-        
-          <div id={id}
-               className="tarjeta"> 
+      <p contentEditable="true" className="descripcionTarjeta">
+        {Descripcion}
+      </p>
 
-            <h2  contenteditable="true" className="tituloTarjeta">{Titulo}</h2>
-            <p contenteditable="true" className="descripcionTarjeta">{Descripcion}</p>
-            
-            <img
-              id="BotonEliminar"
-              src={Imagen}
-              alt="Boton Agregar Tarea"
-              onClick={HandleClickEliminar}
-            />
-      
-          </div>
-        
-    )
+      <img
+        id="BotonEditar"
+        src={editar}
+        alt="Boton Editar Tarea"
+        onClick={()=>HandleClickEditar(id)}
+      />
+
+      <img
+        id="BotonEliminar"
+        src={Imagen}
+        alt="Boton Eliminar Tarea"
+        onClick={() => HandleClickEliminar(id)}
+      />
+    </div>
+  );
 }
 
-export default Tareas ;
-
+export default Tareas;
