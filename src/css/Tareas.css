@@ -1,5 +1,4 @@
 #BotonEliminar {
-
   width: 40px;
   border: none;
   position: absolute;
@@ -7,14 +6,12 @@
   left: 83%;
 }
 #BotonEditar {
-
   width: 40px;
   border: none;
   position: absolute;
   top: 78%;
   left: 68%;
 }
-
 
 #BotonEliminar:hover {
   scale: 1.1;
@@ -24,14 +21,12 @@
   color: #000;
   background: #ffc;
   display: block;
-
   height: 15em;
   width: 15em;
   padding: 1em;
   box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
   transform: rotate(-6deg);
   transition: transform 0.15s linear;
- 
 }
 .tituloTarjeta {
   font-weight: bold;
@@ -40,12 +35,11 @@
 .descripcionTarjeta {
   font-family: "Reenie Beanie";
   font-size: 2rem;
-  width: 6.5em;
-  height: 5.5em;
+  /* width: 6.5em;
+  height: 5.5em; */
   /* white-space: nowrap; */
-   overflow: auto; 
-  text-overflow: ellipsis;
-  
+   /* overflow: auto; */
+  /* text-overflow: ellipsis;  */
 }
 
 .tarjeta:nth-child(even) {

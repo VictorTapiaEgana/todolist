@@ -2,17 +2,15 @@ import "../css/Tareas.css";
 import Imagen from "../assets/delete.png";
 import editar from "../assets/edit.png"
 
-function Tareas({ id, Titulo, Descripcion, HandleClickEliminar, HandleClickEditar }) {
-
- 
+function Tareas({ id, Titulo, Descripcion, HandleClickEliminar, HandleClickEditar, Editable }) { 
 
   return (
     <div id={id} className="tarjeta">
-      <h2 contentEditable="true" className="tituloTarjeta">
+      <h2 contentEditable={Editable} suppressContentEditableWarning="true" className="tituloTarjeta">
         {Titulo}
       </h2>
 
-      <p contentEditable="true" className="descripcionTarjeta">
+      <p contentEditable={Editable} suppressContentEditableWarning="true" className="descripcionTarjeta">
         {Descripcion}
       </p>
 

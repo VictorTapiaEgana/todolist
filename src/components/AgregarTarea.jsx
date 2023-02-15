@@ -17,6 +17,7 @@ function AgregarTarea({ agregarTareas }) {
       id: uuidv4(),
       titulo: Titulo,
       descripcion: Descripcion,
+       editable:false
     };
 
     agregarTareas(TareaX);
@@ -54,13 +55,14 @@ function AgregarTarea({ agregarTareas }) {
         <input
           type="text"
           id="descripcionTarea"
-          placeholder="descripcion"
+          placeholder="descripcion"          
           onChange={cambioDescripcion}
+          
         />
         <input
           type="button"
           id="btnAgregar"
-          value="Agregar"
+          value="Agregar"          
           onClick={() => handleAgregarTarea()}
         />
       </div>
