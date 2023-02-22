@@ -1,6 +1,8 @@
 .DivBotonAgregar {
-  background-color: rgba(102, 102, 102, 255);
+  /* background-color: rgba(102, 102, 102, 255); */
+  background: rgba(0,0,0,0);
   position: absolute;
+  z-index: 6;
   top: 90%;
 }
 
@@ -23,7 +25,8 @@
     display: flex;
     /* justify-content: center; */
      align-items: center; 
-    flex-direction: column;         
+    flex-direction: column;     
+    z-index: 5;    
 }    
 
 .tituloH2{
@@ -42,5 +45,11 @@
 
 #btnAgregar{
     width: 400px;
+    margin-bottom: 15px;
 }
+#btnCancelar{
+  width: 400px;
+  margin-bottom: 20px;
+}
+
 

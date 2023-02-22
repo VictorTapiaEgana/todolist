@@ -31,15 +31,26 @@
 .tituloTarjeta {
   font-weight: bold;
   font-size: 2rem;
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 40px;
+  /* text-overflow: ellipsis; */
 }
 .descripcionTarjeta {
   font-family: "Reenie Beanie";
   font-size: 2rem;
-  /* width: 6.5em;
-  height: 5.5em; */
-  /* white-space: nowrap; */
-   /* overflow: auto; */
-  /* text-overflow: ellipsis;  */
+   width: 6.5em;
+   max-height: 5.5em; 
+  /* white-space: nowrap;  */
+  /* overflow-y: scroll; */
+  /* float:left; */
+  /* width:1000px; */
+  overflow-x:hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+  
+  
 }
 
 .tarjeta:nth-child(even) {

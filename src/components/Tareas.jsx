@@ -6,11 +6,16 @@ function Tareas({ id, Titulo, Descripcion, HandleClickEliminar, HandleClickEdita
 
   return (
     <div id={id} className="tarjeta">
-      <h2 contentEditable={Editable} suppressContentEditableWarning="true" className="tituloTarjeta">
+
+      <h2 contentEditable={Editable} 
+          suppressContentEditableWarning="true" 
+          className="tituloTarjeta">
         {Titulo}
       </h2>
 
-      <p contentEditable={Editable} suppressContentEditableWarning="true" className="descripcionTarjeta">
+      <p contentEditable={Editable} 
+         suppressContentEditableWarning="true" 
+         className="descripcionTarjeta">
         {Descripcion}
       </p>
 

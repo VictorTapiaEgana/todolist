@@ -4,6 +4,11 @@ import Login from "./components/Login";
 import Header from "./components/Header";
 import ContenedorNotas from "./components/ContenedorNotas";
 import { useState } from "react";
+
+
+import ErrorBoundary from './components/ErrorBoundary';
+
+
 let Usuario = {};
 
 function App() {
@@ -22,7 +27,10 @@ function App() {
 
   return (
     <div className="App">     
+     
+     
       {!login && <Login User={User} />}
+     
 
       {Object.keys(Usuario).length > 0 && (
         <>
@@ -35,6 +43,10 @@ function App() {
           <ContenedorNotas />
         </>
       )}
+      
+      
+      
+
     </div>
   );
 }

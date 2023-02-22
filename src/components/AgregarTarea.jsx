@@ -17,10 +17,18 @@ function AgregarTarea({ agregarTareas }) {
       id: uuidv4(),
       titulo: Titulo,
       descripcion: Descripcion,
-       editable:false
+      editable:false
     };
 
     agregarTareas(TareaX);
+    document.getElementById("tituloTarea").value = "";
+    document.getElementById("descripcionTarea").value = "";
+    document.getElementById("DivModalAgregarTarea").style.visibility = "hidden";
+  };
+
+  const handleCancelarTarea = () =>{
+    Titulo="";
+    Descripcion="";
     document.getElementById("tituloTarea").value = "";
     document.getElementById("descripcionTarea").value = "";
     document.getElementById("DivModalAgregarTarea").style.visibility = "hidden";
@@ -59,12 +67,22 @@ function AgregarTarea({ agregarTareas }) {
           onChange={cambioDescripcion}
           
         />
+      
         <input
           type="button"
           id="btnAgregar"
           value="Agregar"          
           onClick={() => handleAgregarTarea()}
         />
+
+        <input
+          type="button"
+          id="btnCancelar"
+          value="Cancelar"          
+          onClick={() => handleCancelarTarea()}
+        />
+
+
       </div>
     </>
   );

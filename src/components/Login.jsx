@@ -8,24 +8,7 @@ function Login({ User }) {
   function handleCallBackResponse(response) {
     var userObject = jwt_decode(response.credential);
     User(userObject);
-  }
-  // inicializar google account
-  useEffect(() => {
-    /*global google*/
-    google.accounts.id.initialize({
-      client_id:
-        "223010066268-3g6qpfknnh2ua850k5e35ppkhdetm04o.apps.googleusercontent.com",
-      callback: handleCallBackResponse,
-    });
-
-    //diseño del boton de logIn
-    google.accounts.id.renderButton(document.getElementById("singInDiv"), {
-      theme: "filled_blue",
-      size: "large",
-      text: "continue_with",
-      shape: "circle",
-    });
-  });
+  }  
   //genera numero para avatar al azar
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -41,7 +24,6 @@ function Login({ User }) {
 
     return res;
   }
-
   //boton click login usuario
   function handleClick() {
     //e.stopPropagation()
@@ -79,11 +61,35 @@ function Login({ User }) {
   function handleonChange(e) {
     sexo = e.target.value;
   }
+
+
+
+  // inicializar GUGUL account
+   useEffect(() => {
+    /*global google*/
+    google.accounts.id.initialize({
+      client_id:
+        "223010066268-3g6qpfknnh2ua850k5e35ppkhdetm04o.apps.googleusercontent.com",
+        callback: handleCallBackResponse,
+    });
+    //diseño del boton de logIn
+    google.accounts.id.renderButton(document.getElementById("singInDiv"), {
+      theme: "filled_blue",
+      size: "large",
+      text: "continue_with",
+      shape: "circle",
+    });
+   }); 
+  //fin GUGUL
+
+
+
+
   return (
     <div className="loginContainer">
-      <h1 className="ingrese">Ingrese con Google</h1>
+      <h1 id="H1" className="ingrese">Ingrese con Google</h1>
       <div id="singInDiv"></div>
-      <h1 className="ingrese">Ingrese como Usuario </h1>
+      <h1 className="ingrese">Ingrese De Usuario </h1>
 
       <div className="loginForm">
         <input id="nombre" type="name" placeholder="Nombre" autoComplete="on" />
@@ -114,5 +120,4 @@ function Login({ User }) {
     </div>
   );
 }
-
 export default Login;
