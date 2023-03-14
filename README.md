@@ -8,7 +8,8 @@ Es la primera aplicacion en Reactjs :tada: , para adentrarme en el uso de estado
 ## Screenshots
 
 ![App Screenshot](https://i.postimg.cc/13zptrcp/screenshoot1.png)
-![App Screenshot](https://i.postimg.cc/6Q2nV6Pq/screenshoot3.png)
+![App Screenshot](https://i.postimg.cc/bqLghsHx/screenshoot3.png)
+                     
 
 
 
