@@ -6,7 +6,7 @@ import ContenedorNotas from "./components/ContenedorNotas";
 import { useState } from "react";
 
 
-import ErrorBoundary from './components/ErrorBoundary';
+
 
 
 let Usuario = {};
