@@ -5,6 +5,14 @@ Es la primera aplicacion en Reactjs :tada: , para adentrarme en el uso de estado
 
 -> [LINK](https://todolist-ebon-seven.vercel.app/) <-
 
+# Habilidades Aprendidas
+
+ Creacion de componentes
+ Renderizacion Condicional
+ Uso de Arreglos
+ Estado
+ 
+
 ## Screenshots
 
 ![App Screenshot](https://i.postimg.cc/13zptrcp/screenshoot1.png)
