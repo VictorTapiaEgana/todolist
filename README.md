@@ -7,10 +7,10 @@ Es la primera aplicacion en Reactjs :tada: , para adentrarme en el uso de estado
 
 # Habilidades Aprendidas
 
- Creacion de componentes
- Renderizacion Condicional
- Uso de Arreglos
- Estado
+- Creacion de componentes
+-  Renderizacion Condicional
+-  Uso de Arreglos
+-  Estado
  
 
 ## Screenshots
